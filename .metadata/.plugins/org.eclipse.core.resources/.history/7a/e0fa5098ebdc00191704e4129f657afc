@@ -1,0 +1,5 @@
+package testLab;
+
+public interface ASD {
+
+}
