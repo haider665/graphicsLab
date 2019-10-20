@@ -38,11 +38,27 @@ public class Points implements GLEventListener {
     public void display(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-        gl.glPointSize(14.0f);
-        gl.glColor3d(1, 0, 0);
+        gl.glPointSize(18.0f);
+        gl.glColor3d(1, 1, 0);
         
-        gl.glBegin(GL2.GL_POINTS);
-        gl.glVertex2d(-20,-10);      
+//        gl.glBegin(GL2.GL_POINTS); // for point
+//        gl.glVertex2d(-60,-10);
+//        gl.glVertex2d(60,-10);
+//        gl.glVertex2d(-60,10);
+//        for(int i=1; i<=100; i++) {
+//        	gl.glVertex2d(-60,-10+i);
+//        }
+        gl.glBegin(GL2.GL_LINES); // for lines
+        gl.glVertex2d(-60,-10);
+        gl.glVertex2d(-120,10);
+        
+        gl.glVertex2d(-60,-10);
+        gl.glVertex2d(60,10);
+//        
+//       
+        gl.glVertex2d(60,10);
+        gl.glVertex2d(-120,10);
+        
         gl.glEnd();
         
     }
