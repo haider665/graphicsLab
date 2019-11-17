@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;midpointCircle.MidPointLines&apos; to &apos;MidPointCircle&apos;&#x0D;&#x0A;- Original project: &apos;CSE423Lab&apos;&#x0D;&#x0A;- Original element: &apos;midpointCircle.MidPointLines&apos;&#x0D;&#x0A;- Renamed element: &apos;midpointCircle.MidPointCircle&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MidPointLines&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;midpointCircle{MidPointLines.java[MidPointLines" matchStrategy="1" name="MidPointCircle" qualified="false" references="true" similarDeclarations="false" stamp="1573957954268" textual="false" version="1.0"/>
+</session>
