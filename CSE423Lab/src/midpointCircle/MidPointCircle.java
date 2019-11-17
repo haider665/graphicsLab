@@ -49,9 +49,9 @@ public class MidPointCircle  implements GLEventListener {
          * put your code here
          */
        //points should be in the same zone
-        DrawMPL(gl,10,10,60,50);
-        DrawMPL(gl,10,-10,60,-50);
-        DrawMPL(gl,-30,-10,-100,-40);
+        DrawMPL(gl,10,5,3);
+//        DrawMPL(gl,10,-10,60,-50);
+//        DrawMPL(gl,-30,-10,-100,-40);
     }
 
     @Override
@@ -64,16 +64,43 @@ public class MidPointCircle  implements GLEventListener {
     }
     
     int dx, dy, b;
-    private void DrawMPL(GL2 gl, int x1, int y1, int x2, int y2) {
+    private void DrawMPL(GL2 gl, int r, int cx, int cy) {
        //write your own code
-       gl.glPointSize(1.0f);
+       gl.glPointSize(2.0f);
        gl.glColor3d(1, 0, 0);
                     
        gl.glBegin(GL2.GL_POINTS);       
+       System.out.println(r);
+       int d = 1-r;
+       int x1=0, y1=r;
+       gl.glVertex2d(0, 0);
+       gl.glVertex2d(y1+cx, x1+cy);
+       gl.glVertex2d(x1+cx, y1+cy);
+       gl.glVertex2d(-x1+cx, y1+cy);
+       gl.glVertex2d(-y1+cx, x1+cy);
+       gl.glVertex2d(-y1+cx, -x1+cy);
+       gl.glVertex2d(-x1+cx, -y1+cy);
+       gl.glVertex2d(x1+cx, -y1+cy);
+       gl.glVertex2d(y1+cx, -x1+cy); 
+       while(x1<y1) {
+    	   if(d<0){
+    		   d=d+2*x1+3;
+    	   } else {
+    		   d=d+2*(x1-y1)+5;
+    		   y1--;
+    	   }
+    	   x1++;
+    	   gl.glVertex2d(y1+cx, x1+cy);
+           gl.glVertex2d(x1+cx, y1+cy);
+           gl.glVertex2d(-x1+cx, y1+cy);
+           gl.glVertex2d(-y1+cx, x1+cy);
+           gl.glVertex2d(-y1+cx, -x1+cy);
+           gl.glVertex2d(-x1+cx, -y1+cy);
+           gl.glVertex2d(x1+cx, -y1+cy);
+           gl.glVertex2d(y1+cx, -x1+cy); 
+       }
        
-       
-      gl.glVertex2d(x1, y1);           
-      gl.glVertex2d(x2, y2);           
+                
 
        gl.glEnd();
     }
